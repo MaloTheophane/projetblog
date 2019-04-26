@@ -17,6 +17,7 @@ class CreateTableComments extends Migration
             $table->increments('id');
             $table->integer('post_id')->foreign('post_id')->references('id')->on('posts'); ;
             $table->string('comment_name');
+             $table->string('comment_statut')->default('display:none');
             $table->longtext('comment_email');
             $table->longtext('comment_content');
             $table->timestamp('comment_date')->default(DB::raw('CURRENT_TIMESTAMP'));

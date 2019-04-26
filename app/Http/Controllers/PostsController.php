@@ -44,15 +44,18 @@ function comment(CommentRequest $Request, $id){
          $comment->comment_email= $Request->input('comment_email'); 
          $comment->comment_content= $Request->input('comment_content'); 
          $comment->save(); 
-         $comments = \App\Comment::where('post_id',$Request->input('post_id'))->get(); 
+        // $comments = \App\Comment::where('post_id',$Request->input('post_id'))->get(); 
        
          return view('/posts/single',array('post' => $post ));
-    
-        
-          
+         
     }
 
-
+function commentairesDePost($id){
+  
+       $post = \App\Post::where('id',$id)->first();
+         return view('/comment/postcomment',array('post' => $post ));
+         
+    }
 
 
 

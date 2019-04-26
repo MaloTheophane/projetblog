@@ -33,11 +33,13 @@ public function before(User $user)
     }
 
 
-public function admin(User $user, Post $post, User $user2)
-    {
 
+    public function gererComment(User $user, Post $post)
+    {
+  echo "admin de post policy"; 
    
-    return $user2->role==='admin'; 
+   // return $user->role==='admin'; 
+  return true; 
   
     
     }

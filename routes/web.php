@@ -27,5 +27,16 @@ Route::get('/articles', 'PostsController@index');
 Route::get('/contact', 'ContactsController@create');
 Route::post('/contact', 'ContactsController@store');
 Route::get('contact/{id}', 'ContactsController@affiche');
+
+Route::get('/comment/edit/{id}', 'CommentController@edit');
+Route::post('/comment/edit/{id}', 'CommentController@update');
+
+Route::get('/comment/autoriser/{id}', 'CommentController@autoriser');
+Route::get('/comment/bloquer/{id}', 'CommentController@bloquer');
+
+Route::get('/comment/gerer/{id}', 'PostsController@commentairesDePost');
+
+
+
 Auth::routes();
 

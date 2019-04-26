@@ -20,7 +20,6 @@ class UserPolicy
     {
         //
     }
-  
    public function administrer(User $user, User $model)
     {
          
@@ -32,6 +31,7 @@ class UserPolicy
         
         return $user->role=="admin"; 
     }
+
 
     /**
      * Determine whether the user can create models.
